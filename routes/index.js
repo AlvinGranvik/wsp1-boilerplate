@@ -19,9 +19,20 @@ router.get("/", async (req, res) => {
         req.session.views = 1
       }
       res.render("index.njk",
-        { title: "Test", message: "Funkar?", views: req.session.views }
+        { title: "Login", message: "Do the thing", views: req.session.views }
       )
 })
-
+await
+router.get("/login", (req, res) => {
+  if (user.name && user.password) {
+    res.render("login.njk", {
+      title: "logged in"
+    })
+  } else {
+    res.render("index.njk", {
+      title: "Wrong username or password"
+    })
+  }
+})
 
 export default router

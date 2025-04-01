@@ -5,5 +5,15 @@
   <p>views: {{ views }}</p>
   <h1>{{ title }}</h1>
   <p>{{ message }}</p>
+  <form action="/login" method="get">
+    <div class="bordertext">
+      <label for="username">username</label>
+      <input type="text" name="username" id="username">
+      <label for="password">password</label>
+      <input type="password" name="password" id="password">
+    </div>
+    <button type="submit">Login</button>
+  </form>
+
 </main>
 {% endblock %}
